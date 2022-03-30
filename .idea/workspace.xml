@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f72e5f-bf81-4c7f-b4c4-ef2215253893" name="Default Changelist" comment="Частичная Верстка">
-      <change afterPath="$PROJECT_DIR$/templates/about_me.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base_header.html" afterDir="false" />
+    <list default="true" id="29f72e5f-bf81-4c7f-b4c4-ef2215253893" name="Default Changelist" comment="Cделана страница About me(будет еще дополняться)">
+      <change afterPath="$PROJECT_DIR$/header_pages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/contacts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -94,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648624007666</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cделана страница About me(будет еще дополняться)">
+      <created>1648624628932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648624628932</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Частичный шаблон для главной страницы" />
     <MESSAGE value="Частичная Верстка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Частичная Верстка" />
+    <MESSAGE value="Cделана страница About me(будет еще дополняться)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cделана страница About me(будет еще дополняться)" />
   </component>
 </project>

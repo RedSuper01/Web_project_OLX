@@ -1,14 +1,6 @@
-from flask import Flask, render_template
-from header_pages import about_me, contacts, help
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
-
-
-@app.route('/')
-@app.route('/main')
-def main():
-    return render_template("main.html")
-
 
 @app.route('/about_me')
 def about_me():
@@ -23,10 +15,6 @@ def contacts():
 def help():
     return render_template("help.html")
 
-
 @app.route('/something')
 def something():
-    return render_template("base_header.html")
-
-if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    return "Что-нибудь"
