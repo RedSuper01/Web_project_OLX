@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29f72e5f-bf81-4c7f-b4c4-ef2215253893" name="Default Changelist" comment="Cделана страница About me(будет еще дополняться)">
-      <change afterPath="$PROJECT_DIR$/header_pages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/help.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/data/_all_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/data/db_session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,7 +42,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PycharmProjects/pythonProject3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yandex_web" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
