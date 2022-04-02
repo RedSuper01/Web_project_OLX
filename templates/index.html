@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+    <a href="goods" class="btn btn-secondary">Добавить товар</a>
+{% endif %}
+
+<h1>Ваши товары</h1>
+{% for item in goods %}
+<div class="col-md6 border rounded">
+    <h2>{{item.good}}</h2>
+    <div>
+        {{item.description}}
+    </div>
+    <div>
+        Продавец - {{item.user.name}}, {{item.user.surname}}, Дата публикации - {{item.created_date}}
+    </div>
+    {% if current_user.is_authenticated and current_user == item.user %}
+    <div>
+        <a href="/goods/{{ item.id }}" class="btn btn-warning">
+            Изменить
+        </a>
+        <a href="/goods_delete/{{ item.id }}" class="btn btn-danger">
+            Удалить
+        </a>
+    </div>
+{% endif %}
+</div>
+
+{% endfor %}
+{% endblock %}
