@@ -6,6 +6,7 @@ from data.goods import Goods
 from forms.user import RegisterForm
 from flask_login import login_required, LoginManager, login_user, logout_user, current_user
 from forms.login import LoginForm
+from forms.profile import ProfileForm
 from forms.goods import GoodsForm
 
 app = Flask(__name__)
@@ -26,6 +27,43 @@ def goods_delete(id):
     else:
         abort(404)
     return redirect('/')
+
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+def edit_user():
+    form = ProfileForm()
+    if request.method == 'GET':
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).filter(User.id == current_user.id).first()
+        if user:
+            form.name.data = user.name
+            form.surname.data = user.surname
+            form.age.data = user.age
+            form.contacts.data = user.contacts
+            form.email.data = user.email
+            print('ljkl')
+            form.photo.data = user.photo
+        else:
+            abort(404)
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        print('dsjlfjajf')
+        user = db_sess.query(User).filter(User.id == current_user.id).first()
+        if user:
+            user.name = form.name.data
+            user.surname = form.surname.data
+            user.age = form.age.data
+            user.contacts = form.contacts.data
+            user.email = form.email.data
+            user.photo = form.photo.data
+            db_sess.commit()
+            return redirect('/profile')
+        else:
+            abort(404)
+    return render_template('profile_edit.html',
+                           title='Редактирование товара',
+                           form=form)
+
 
 
 @app.route('/goods/<int:id>', methods=['GET', 'POST'])
@@ -148,9 +186,9 @@ def main():
     return render_template("index.html", goods=goods)
 
 
-@app.route('/about_me')
+@app.route('/profile')
 def about_me():
-    return render_template("about_me.html")
+    return render_template("profile.html")
 
 
 @app.route('/contacts')

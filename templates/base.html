@@ -15,8 +15,8 @@
         <nav>
             <ul class="top-menu">
                 <li><a href="/">Главная</a></li>
-                <li><a href="/about_me">Обо мне</a></li>
-                <li><a href="/contacts">Контакты</a></li>
+                <li><a href="/profile">Профиль</a></li>
+                <li><a href="/contacts">Контакты создателя</a></li>
                 <li><a href="/help">Помощь</a></li>
                 <li><a href="/something">Что-нибудь еще</a></li>
             </ul>
@@ -27,7 +27,7 @@
 <main role="main" class="container">
     <nav>
         {% if current_user.is_authenticated %}
-            <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+            <a class="navbar-brand" href="/profile">{{ current_user.name }}</a>
         {% else %}
             <p>
                 <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
