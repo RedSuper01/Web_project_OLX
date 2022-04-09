@@ -3,12 +3,13 @@
 {% block content %}
 {% if current_user.is_authenticated %}
     <a href="goods" class="btn btn-secondary">Добавить товар</a>
+    <a href="bag" class="btn btn-warning">Корзина</a>
 {% endif %}
 
 <h1>Ваши товары</h1>
 {% for item in goods %}
 <div class="col-md6 border rounded">
-    <h2>{{item.good}}</h2>
+    <a class="navbar-brand" href="/good/{{item.id}}">{{item.good}}</a>
     <div>
         {{item.description}}
     </div>

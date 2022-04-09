@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div>
+            <a href="/goods/{{good.id}}" class="btn btn-warning">
+                Изменить товар
+            </a>
+        </div>
+        <h1 align="middle">Товар</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Название товара</td>
+                    <td>{{good.good}}</td>
+                </tr>
+                <tr>
+                    <td>Цена</td>
+                    <td>{{good.price}}</td>
+                </tr>
+                <tr>
+                    <td>Описание</td>
+                    <td>{{good.description}}</td>
+                </tr>
+                <tr>
+                    <td>Контакты</td>
+                    <td>{{good.contacts}}</td>
+                </tr>
+                <tr>
+                    <td>Продано</td>
+                    <td>{{good.is_sold}}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <h1>Вы зашли как гость. Чтобы увидеть ваш профиль нужно войти в систему</h1>
+    {% endif %}
+{% endblock %}

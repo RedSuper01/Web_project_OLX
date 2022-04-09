@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask import session, abort, redirect, request, make_response
+from flask import session, abort, url_for, redirect, request, make_response
 from data import db_session
 from data.users import User
 from data.goods import Goods
@@ -29,6 +29,7 @@ def goods_delete(id):
     return redirect('/')
 
 
+
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_user():
     form = ProfileForm()
@@ -41,13 +42,11 @@ def edit_user():
             form.age.data = user.age
             form.contacts.data = user.contacts
             form.email.data = user.email
-            print('ljkl')
             form.photo.data = user.photo
         else:
             abort(404)
     if form.validate_on_submit():
         db_sess = db_session.create_session()
-        print('dsjlfjajf')
         user = db_sess.query(User).filter(User.id == current_user.id).first()
         if user:
             user.name = form.name.data
@@ -189,6 +188,15 @@ def main():
 @app.route('/profile')
 def about_me():
     return render_template("profile.html")
+
+
+@app.route('/good/<int:id>')
+def good_page(id):
+    db_sess = db_session.create_session()
+    good = db_sess.query(Goods).filter(Goods.id == id).first()
+    print(good)
+    return render_template("goods_page.html", good=good)
+
 
 
 @app.route('/contacts')
