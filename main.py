@@ -23,7 +23,7 @@ api.add_resource(goods_resources.GoodsResource, '/api/v2/goods/<int:goods_id>')
 api.add_resource(users_resources.UsersListResource, '/api/v2/users')
 
 # для одного объекта
-api.add_resource(users_resources.UserResource, '/api/v2/users/<int:users_id>')
+api.add_resource(users_resources.UserResource, '/api/v2/users/<int:user_id>')
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
