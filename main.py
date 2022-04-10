@@ -1,6 +1,6 @@
-from flask import Flask, render_template
-from flask import session, abort, url_for, redirect, request, make_response
-from data import db_session
+from flask import Flask, jsonify, render_template
+from flask import abort, redirect, request, make_response
+from data import db_session, goods_api
 from data.users import User
 from data.goods import Goods
 from forms.user import RegisterForm
@@ -8,8 +8,22 @@ from flask_login import login_required, LoginManager, login_user, logout_user, c
 from forms.login import LoginForm
 from forms.profile import ProfileForm
 from forms.goods import GoodsForm
+from flask_restful import abort, Api
+import goods_resources
+import users_resources
 
 app = Flask(__name__)
+api = Api(app)
+# для списка объектов
+api.add_resource(goods_resources.GoodsListResource, '/api/v2/goods')
+
+# для одного объекта
+api.add_resource(goods_resources.GoodsResource, '/api/v2/goods/<int:goods_id>')
+
+api.add_resource(users_resources.UserListResource, '/api/v2/users')
+
+# для одного объекта
+api.add_resource(users_resources.UserResource, '/api/v2/users/<int:users_id>')
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -198,6 +212,9 @@ def good_page(id):
     return render_template("goods_page.html", good=good)
 
 
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
 
 @app.route('/contacts')
 def contacts():
@@ -210,13 +227,15 @@ def help():
 
 @app.route('/something')
 def something():
-    return render_template("base_header.html")
+    return render_template("base.html")
 
 if __name__ == '__main__':
     db_session.global_init("db/MY_OLX.db")
 
+
     db_sess = db_session.create_session()
 
+    app.register_blueprint(goods_api.blueprint)
     print(current_user)
     if current_user:
         if current_user.is_authenticated:
