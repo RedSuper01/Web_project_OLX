@@ -20,7 +20,7 @@ api.add_resource(goods_resources.GoodsListResource, '/api/v2/goods')
 # для одного объекта
 api.add_resource(goods_resources.GoodsResource, '/api/v2/goods/<int:goods_id>')
 
-api.add_resource(users_resources.UserListResource, '/api/v2/users')
+api.add_resource(users_resources.UsersListResource, '/api/v2/users')
 
 # для одного объекта
 api.add_resource(users_resources.UserResource, '/api/v2/users/<int:users_id>')
