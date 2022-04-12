@@ -43,6 +43,27 @@ def goods_delete(id):
     return redirect('/')
 
 
+@app.route('/bag/<int:id>', methods=['GET', 'POST'])
+def bag_delete(id):
+    db_sess = db_session.create_session()
+    goods = db_sess.query(Goods).filter(Goods.id == id).first()
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
+
+    if goods:
+        bag = str(user.bag).split()
+        num = bag.index(str(id))
+        del bag[num]
+        if bag:
+            bag = ' '.join(bag)
+            user.bag = bag
+            db_sess.commit()
+        else:
+            user.bag = ''
+            db_sess.commit()
+    else:
+        abort(404)
+    return redirect('/')
+
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_user():
@@ -113,6 +134,30 @@ def edit_goods(id):
     return render_template('goods.html',
                            title='Редактирование товара',
                            form=form)
+
+
+@app.route("/add_bag/<int:id>", methods=['GET', 'POST'])
+def add_bag(id):
+    db_sess = db_session.create_session()
+    goods = db_sess.query(Goods).filter(Goods.id == id).first()
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
+    if goods:
+
+        bag = str(user.bag)
+        print(bag)
+        if not current_user.bag:
+            user.bag = id
+            print('Сделано')
+            db_sess.commit()
+        else:
+            all_goods_in_bag = list(map(int, bag.split()))
+            if id not in all_goods_in_bag:
+                all_goods_in_bag.append(int(id))
+                user.bag = ' '.join(list(map(str, all_goods_in_bag)))
+                db_sess.commit()
+    else:
+        abort(404)
+    return redirect('/')
 
 
 @app.route('/goods', methods=['GET', 'POST'])
@@ -197,6 +242,16 @@ def main():
     db_sess = db_session.create_session()
     goods = db_sess.query(Goods)
     return render_template("index.html", goods=goods)
+
+
+@app.route('/bag')
+def bag():
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.id == current_user.id).first()
+    bag = str(user.bag).split()
+    bag = list(map(int, bag))
+    goods = db_sess.query(Goods).filter(Goods.id.in_(bag)).all()
+    return render_template("bag.html", goods=goods)
 
 
 @app.route('/profile')

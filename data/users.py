@@ -21,6 +21,7 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     photo = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
 
+    bag = sqlalchemy.Column(sqlalchemy.String, default='')
     goods = orm.relation("Goods", back_populates='user')
 
     def __repr__(self):

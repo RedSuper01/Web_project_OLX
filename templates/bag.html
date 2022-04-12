@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Корзина с товаром</h1>
+{% for item in goods %}
+<div class="col-md6 border rounded">
+    <div>
+    <a class="navbar-brand" href="/good/{{item.id}}">{{item.good}}</a>
+        <br>{{item.description}}
+    </div>
+    <div>
+        Продавец - {{item.user.name}}, {{item.user.surname}}, Дата публикации - {{item.created_date}}
+    </div>
+    {% if current_user.is_authenticated %}
+    <div>
+        <a href="/bag/{{ item.id }}" class="btn btn-danger">
+            Удалить из корзины
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+{% endfor %}
+{% endblock %}

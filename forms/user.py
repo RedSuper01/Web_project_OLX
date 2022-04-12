@@ -12,4 +12,5 @@ class RegisterForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     password_again = StringField('Repeat password', validators=[DataRequired()])
     photo = FileField('Your avatar')
+    bag = ''
     submit = SubmitField('Submit')
