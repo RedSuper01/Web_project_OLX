@@ -5,6 +5,7 @@ from flask import jsonify, abort
 from flask_restful import abort, Resource
 
 
+# Действия в случае ошибка
 def abort_if_news_not_found(goods_id):
     session = db_session.create_session()
     goods = session.query(Goods).get(goods_id)
@@ -12,6 +13,7 @@ def abort_if_news_not_found(goods_id):
         abort(404, message=f'Goods {goods_id} not found')
 
 
+# Класс для одного товара, реализующий удаление и получение
 class GoodsResource(Resource):
     def get(self, goods_id):
         abort_if_news_not_found(goods_id)
@@ -30,6 +32,7 @@ class GoodsResource(Resource):
         return jsonify({'success': 'OK'})
 
 
+#Класс для действий над несколькими товарами
 class GoodsListResource(Resource):
     def get(self):
         session = db_session.create_session()

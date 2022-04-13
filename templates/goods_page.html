@@ -2,11 +2,6 @@
 
 {% block content %}
     {% if current_user.is_authenticated %}
-        <div>
-            <a href="/goods/{{good.id}}" class="btn btn-warning">
-                Изменить товар
-            </a>
-        </div>
         <h1 align="middle">Товар</h1>
         <table>
             <tbody>

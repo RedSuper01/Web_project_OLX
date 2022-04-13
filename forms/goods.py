@@ -3,6 +3,7 @@ from wtforms import StringField, SubmitField, TextAreaField, IntegerField, FileF
 from wtforms.validators import DataRequired
 
 
+#Форма для действий с товарами
 class GoodsForm(FlaskForm):
     good = StringField('Name of the good', validators=[DataRequired()])
     price = IntegerField('Price', validators=[DataRequired()])

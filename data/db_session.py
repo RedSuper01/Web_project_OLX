@@ -8,6 +8,7 @@ SqlAlchemyBase = dec.declarative_base()
 __factory = None
 
 
+# Функция global_init одключается к базе данных
 def global_init(db_file):
     global __factory
 

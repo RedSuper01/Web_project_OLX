@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if current_user.is_authenticated %}
-    <a href="/goods" class="btn btn-secondary">Добавить товар</a>
-    <a href="/bag" class="btn btn-warning">Корзина</a>
-{% endif %}
-
 <h1>Товары</h1>
 {% for item in goods %}
 <div class="col-md6 border rounded">
@@ -25,7 +20,7 @@
             Удалить
         </a>
     </div>
-    {% elif current_user.is_authenticated and current_user != item.user %}
+    {% else %}
     <div>
         <a href="/add_bag/{{item.id}}" class="btn btn-secondary">
             Добавить в корзину

@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, FileField, EmailField, PasswordField, StringField, TextAreaField, IntegerField, SubmitField
+from wtforms import FileField, EmailField, StringField, IntegerField, SubmitField
 from wtforms.validators import  DataRequired
 
 
+#Форма для изменения данных в профиле пользователя
 class ProfileForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     surname = StringField('Surname', validators=[DataRequired()])

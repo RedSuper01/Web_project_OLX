@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f72e5f-bf81-4c7f-b4c4-ef2215253893" name="Default Changelist" comment="API полностью готов">
-      <change afterPath="$PROJECT_DIR$/templates/bag.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contact_with_us.html" afterDir="false" />
+    <list default="true" id="29f72e5f-bf81-4c7f-b4c4-ef2215253893" name="Default Changelist" comment="Закончена корзина">
+      <change afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/_all_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/_all_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/db_session.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/db_session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/goods.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/goods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/goods_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reqparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/reqparse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reqparse_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/reqparse_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/MY_OLX.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/MY_OLX.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/goods.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/goods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/profile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods_resources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/goods_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/goods_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649578675493</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Закончена корзина">
+      <created>1649783442018</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1649783442019</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,17 +243,7 @@
     <MESSAGE value="Готов API без тестов" />
     <MESSAGE value="API для товаров работает" />
     <MESSAGE value="API полностью готов" />
-    <option name="LAST_COMMIT_MESSAGE" value="API полностью готов" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/goods_api.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Закончена корзина" />
+    <option name="LAST_COMMIT_MESSAGE" value="Закончена корзина" />
   </component>
 </project>

@@ -3,15 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css">
+
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
 </head>
+
 <body>
-<header>
-    <div class="container">
-        <a href="/" class="logo">Что-то Типа Логотипа</a>
+<div id="wrapper"></div>
+    <header>
+        <a href="/"><img src="/static/img/logo_1.jpg" alt="KMO logo"></a>
         <nav>
             <ul class="top-menu">
                 <li><a href="/">Главная</a></li>
@@ -21,31 +24,35 @@
                 <li><a href="/something">Что-нибудь еще</a></li>
             </ul>
         </nav>
-    </div>
-</header>
-<!-- Begin page content -->
-<main role="main" class="container">
-    <nav>
-        {% if current_user.is_authenticated %}
-            <a class="navbar-brand" href="/profile">{{ current_user.name }}</a>
-        {% else %}
-            <p>
-                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
-                <a class="btn btn-success" href="/login">Войти</a>
-            </p>
-        {% endif %}
-    </nav>
-    {% block content %}
 
-    {% endblock %}
-</main>
-<footer>
-    <nav>
-            <ul class="down-menu">
-                <li><a href="/contact_with_us">Связаться с нами</a></li>
-                <li><a href="/something">Что-нибудь еще</a></li>
-            </ul>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <nav>
+            {% if current_user.is_authenticated %}
+                <a class="navbar-brand" href="/profile">{{ current_user.name }}</a>
+            {% else %}
+                <p>
+                    <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                    <a class="btn btn-success" href="/login">Войти</a>
+                </p>
+            {% endif %}
         </nav>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</div>
+
+<footer>
+    <div id="footer-logo">
+        <a href="/"><img src="/static/img/logo_1.jpg" alt="KMO logo"></a>
+
+        <p>Copyright © 2022 K.M.O. RedSuper's creation</p>
+    </div>
+    <h1>Thanks for using!</h1>
+    <h1>Made by Flask</h1>
+    <h1>Have a nice day!</h1>
 </footer>
 </body>
 </html>
