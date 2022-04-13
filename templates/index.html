@@ -5,6 +5,10 @@
     <a href="/goods" class="btn btn-secondary">Добавить товар</a>
     <a href="/bag" class="btn btn-warning">Корзина</a>
 {% endif %}
+{% if current_user.is_authenticated and current_user.email == 'anastasia.kim.mobile@gmail.com%}
+    <a href="/email_message" class="btn btn-primary">Отправить сообщение всем пользователям</a>
+
+{% endif %}
 
 <h1>Товары</h1>
 {% for item in goods %}

@@ -8,7 +8,9 @@ from flask_login import login_required, LoginManager, login_user, logout_user, c
 from forms.login import LoginForm
 from forms.profile import ProfileForm
 from forms.goods import GoodsForm
+from forms.email_form import EmailForm
 from flask_restful import abort, Api
+from sending_mails import send_mail
 import goods_resources
 import users_resources
 
@@ -70,6 +72,21 @@ def something():
 
 
 # Теперь функции для работы с пользователем
+# Рассылка писем(только для одного человека)
+@app.route('/email_message', methods=['GET', 'POST'])
+def send_mail_to_all():
+    form = EmailForm()
+    if form.validate_on_submit():
+        subject = form.subject.data
+        description = form.description.data
+
+        db_sess = db_session.create_session()
+        users = db_sess.query(User).filter(User.id != 1)
+        send_mail(subject, description, users)
+        return redirect('/')
+    return render_template('mail.html', title='Регистрация', form=form)
+
+
 # Редактирование профиля
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_user():
